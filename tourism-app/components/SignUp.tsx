@@ -6,6 +6,8 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import Link from "next/link";
 import Image from "next/image";
 import { auth } from "@/firebase/firebaseConfig";
+import { db } from "@/firebase/firebaseConfig";
+import { addDoc, collection } from "@firebase/firestore";
 
 interface SignupFormData {
   firstName: string;
@@ -49,16 +51,22 @@ const SignupForm: React.FC = () => {
     validationSchema,
     onSubmit: async (values) => {
       try {
-        // Firebase'e kullanıcı kayıt isteği at
         const userCredential = await createUserWithEmailAndPassword(
           auth,
           values.email,
           values.password,
         );
-        console.log(userCredential);
-        // Burada kullanıcı ek bilgilerini Firebase'e kaydetmek için ek işlemler yapabilirsiniz
+        // Kullanıcı ek bilgilerini Firestore'a kaydet
+        await addDoc(collection(db, "users"), {
+          firstName: values.firstName,
+          lastName: values.lastName,
+          email: values.email,
+          gender: values.gender,
+          birthDate: values.birthDate, // Firestore için uygun bir formatta olması gerekebilir
+        });
+        console.log("Kullanıcı Firestore'a kaydedildi:", userCredential);
       } catch (error) {
-        console.error(error);
+        console.error("Kullanıcı kaydı hatası:", error);
       }
     },
   });

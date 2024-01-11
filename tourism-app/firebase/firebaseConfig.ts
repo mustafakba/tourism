@@ -1,24 +1,29 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAuth } from "@firebase/auth";
+import { getAnalytics } from "firebase/analytics";
+import { getFirestore } from "@firebase/firestore";
+import { getAuth } from "firebase/auth";
 
 // TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDeNXMVAb-TYKLO2SU40znH12nkUZZMkJk",
-  authDomain: "tourism-app-6725f.firebaseapp.com",
-  databaseURL: "https://tourism-app-6725f-default-rtdb.firebaseio.com",
-  projectId: "tourism-app-6725f",
-  storageBucket: "tourism-app-6725f.appspot.com",
-  messagingSenderId: "40522964404",
-  appId: "1:40522964404:web:b98740a12f62f4c116a6e1",
-  measurementId: "G-FB859M72V3",
+  apiKey: "AIzaSyBjxaq0hs92kIlIkyepOjak_4LglAA0Wts",
+  authDomain: "tourism-8c11f.firebaseapp.com",
+  projectId: "tourism-8c11f",
+  storageBucket: "tourism-8c11f.appspot.com",
+  messagingSenderId: "913382654171",
+  appId: "1:913382654171:web:8abd73db31ef5f7d100cfe",
+  measurementId: "G-QJ153ZEWBB",
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
 
-export const auth = getAuth(app);
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+const auth = getAuth(app);
+
+export const db = getFirestore(app);
+
+export { auth };
