@@ -5,9 +5,10 @@ import * as Yup from "yup";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import Link from "next/link";
 import Image from "next/image";
-import { auth } from "@/firebase/firebaseConfig";
-import { db } from "@/firebase/firebaseConfig";
+import { auth, db } from "@/firebase/firebaseConfig";
+
 import { addDoc, collection } from "@firebase/firestore";
+import { toast } from "react-toastify";
 
 interface SignupFormData {
   firstName: string;
@@ -56,17 +57,34 @@ const SignupForm: React.FC = () => {
           values.email,
           values.password,
         );
-        // Kullanıcı ek bilgilerini Firestore'a kaydet
-        await addDoc(collection(db, "users"), {
+        console.log("Firebase Auth Kullanıcı Oluşturuldu:", userCredential);
+
+        const userDocRef = await addDoc(collection(db, "users"), {
           firstName: values.firstName,
           lastName: values.lastName,
           email: values.email,
           gender: values.gender,
-          birthDate: values.birthDate, // Firestore için uygun bir formatta olması gerekebilir
+          birthDate: new Date(values.birthDate), // Firestore'un kabul ettiği bir Date objesi olarak
         });
-        console.log("Kullanıcı Firestore'a kaydedildi:", userCredential);
+        console.log(
+          "Firestore'a Kullanıcı Bilgileri Eklendi, Belge ID:",
+          userDocRef.id,
+        );
+        toast.success(
+          `${values.firstName} kullanıcı başarıyla oluşturuldu.Giriş sayfasına yönlendiriliyorsunuz.`,
+        );
       } catch (error) {
-        console.error("Kullanıcı kaydı hatası:", error);
+        // Özel hata mesajını ayarla
+        let errorMessage = "";
+        if (error.code === "auth/email-already-in-use") {
+          errorMessage = "Bu e-posta hesabı zaten kayıtlı.";
+        } else {
+          // Genel hata mesajı
+          errorMessage = "Kayıt sırasında bir hata oluştu.";
+        }
+        // Hata mesajını formik status'una ata
+        formik.setStatus(errorMessage);
+        console.error("Kullanıcı kaydı sırasında hata oluştu:", error);
       }
     },
   });
@@ -214,6 +232,8 @@ const SignupForm: React.FC = () => {
             <div style={{ color: "red" }}>{formik.errors.birthDate}</div>
           ) : null}
         </div>
+        {formik.status && <div style={{ color: "red" }}>{formik.status}</div>}
+
         <div
           className={
             "opacity-90 duration-200 hover:opacity-100 bg-primary-50 hover flex w-full justify-center text-center py-2 text-white rounded"
