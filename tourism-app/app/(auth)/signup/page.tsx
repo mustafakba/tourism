@@ -1,7 +1,12 @@
 import React from "react";
+import SignupForm from "@/components/SignUp";
 
 const Page = () => {
-  return <div>sign up page</div>;
+  return (
+    <div className={"flex w-full"}>
+      <SignupForm />
+    </div>
+  );
 };
 
 export default Page;
