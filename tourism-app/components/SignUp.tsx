@@ -239,9 +239,7 @@ const SignupForm: React.FC = () => {
             "opacity-90 duration-200 hover:opacity-100 bg-primary-50 hover flex w-full justify-center text-center py-2 text-white rounded"
           }
         >
-          <button onClick={() => console.log(formik)} type={"submit"}>
-            Submit
-          </button>
+          <button type={"submit"}>Submit</button>
         </div>
       </form>
       <div
