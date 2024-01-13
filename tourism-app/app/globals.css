@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  --var-black-opacity: rgba(0,0,0,0.1) ;
   --var-primary-900: #000000;
   --var-primary-800: #0a071a;
   --var-primary-700: #140f35;
@@ -41,7 +42,6 @@
 }
 .language-select option.tr { background-image: url('../public/assets/images/tr-flag.svg');}
 .language-select option.en { background-image: url('../public/assets/images/en-flag.svg');}
-
 
 .menu-items {
  @apply cursor-pointer opacity-90 hover:opacity-100

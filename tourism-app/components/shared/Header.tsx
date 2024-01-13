@@ -49,7 +49,7 @@ const Header = () => {
               />
             </div>
             {chooseLanguage && (
-              <div className="absolute shadow  border top-8">
+              <div className="absolute shadow border-primary-200 top-8">
                 {languages
                   .filter((lang) => lang.code !== selectedLanguage) // Seçili olmayan dilleri filtrele
                   .map((lang, index) => (
