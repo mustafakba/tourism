@@ -3,6 +3,9 @@ import React from "react";
 import { useSelector } from "react-redux";
 import Image from "next/image";
 import SearchBar from "@/components/shared/SearchBar";
+import HeroSection from "@/components/HeroSection";
+import OurInfos from "@/components/OurInfos";
+import { faPlaneSlash } from "@fortawesome/free-solid-svg-icons";
 
 interface User {
   email: string;
@@ -15,23 +18,46 @@ export default function Home() {
   const user: User = useSelector((state: { user: User }) => state.user);
 
   return (
-    <main className="flex min-h-[90vh] flex-col items-center">
-      <div className={"shadow-2xl relative"}>
-        <Image
-          src={"/assets/images/bannerHome.png"}
-          alt={"banner"}
-          width={1200}
-          height={25}
-          className={"w-screen h-[60vh] object-cover filter brightness-[65%]"}
-        />
-      </div>
-      <SearchBar />
-      <div>
-        <p>Homepage</p>
-        <p>Email: {user.email}</p>
-        <p>Birth Date: {user.birthDate}</p>
-        <p>Gender: {user.gender}</p>
-      </div>
+    <main className="flex min-h-[90vh] relative flex-col items-center">
+      <section className={"relative"}>
+        <HeroSection />
+      </section>
+      <section
+        className={
+          "my-10 items-center justify-center ml-auto mr-auto flex flex-col"
+        }
+      >
+        <h4 className={"mb-10 italic border-b text-2xl"}>
+          {" "}
+          Why work with us ?
+        </h4>
+        <div className="about-us container gap-x-4 flex md:flex-row flex-row justify-between w-full">
+          <OurInfos
+            text={
+              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur dolores doloribus dolorum explicabo fugit quis quo sit vitae voluptatem."
+            }
+            icon={faPlaneSlash}
+          />
+          <OurInfos
+            text={
+              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur dolores doloribus dolorum explicabo fugit quis quo sit vitae voluptatem."
+            }
+            icon={faPlaneSlash}
+          />
+          <OurInfos
+            text={
+              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur dolores doloribus dolorum explicabo fugit quis quo sit vitae voluptatem."
+            }
+            icon={faPlaneSlash}
+          />
+          <OurInfos
+            text={
+              "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur dolores doloribus dolorum explicabo fugit quis quo sit vitae voluptatem."
+            }
+            icon={faPlaneSlash}
+          />
+        </div>
+      </section>
     </main>
   );
 }

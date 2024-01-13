@@ -12,13 +12,17 @@ const Header = () => {
   ];
 
   // Dil seçimi yapacak fonksiyon
-  const handleLanguageChange = (langCode) => {
+  const handleLanguageChange = (langCode: React.SetStateAction<string>) => {
     setSelectedLanguage(langCode);
   };
   return (
     <div className={"bg-primary-50 shadow-xl"}>
       <div className={"wrapper text-white"}>
-        <header className={"container flex items-center w-full h-[100px] "}>
+        <header
+          className={
+            "container justify-between flex items-center w-full h-[100px] "
+          }
+        >
           <Link href={"/"} className="logo">
             <Image
               src={"/assets/logos/svg/logo-nobg-white.svg.svg"}
@@ -27,7 +31,7 @@ const Header = () => {
               height={80}
             />
           </Link>
-          <nav className="menu flex justify-center gap-x-5 flex-1">
+          <nav className="hidden  menu md:flex justify-center gap-x-5 flex-1">
             <div className={"menu-items"}>Otobüs Seferleri</div>
             <div className={"menu-items"}>Hizmetlerimiz</div>
             <div className={"menu-items"}>Otobüsüm-Yolcum Nerede</div>

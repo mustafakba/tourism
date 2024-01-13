@@ -10,7 +10,7 @@ interface AdvantageCardProps {
 const AdvantageCard: React.FC<AdvantageCardProps> = ({ icon, text }) => {
   return (
     <div className="flex flex-col gap-y-3 justify-center p-4 items-center bg-[#0000007D] rounded-xl advantage-cart shadow-lg">
-      <div className="text-3xl">
+      <div className="md:text-3xl">
         <FontAwesomeIcon color={"rgb(255,255,255)"} icon={icon} />
       </div>
       <div className="flex-1 text-xs">

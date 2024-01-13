@@ -29,9 +29,11 @@ const SearchArea: React.FC = ({}) => {
     "Hakkari",
   ];
   return (
-    <div className="flex wrapper absolute top-[23%] flex-col w-full gap-4">
+    <div className="flex wrapper absolute top-0 md:top-[23%] flex-col w-full gap-4">
       <div className={"container rounded-xl py-5"}>
-        <div className={"grid grid-cols-2 gap-x-4 px-4 justify-around"}>
+        <div
+          className={"grid md:grid-cols-2 gap-y-8 gap-x-4 px-4 justify-around"}
+        >
           <div className="search-ticket-area grid py-4 gap-y-1 px-4 rounded-xl  bg-gray-50">
             <div className="flex flex-col">
               <label
@@ -97,7 +99,9 @@ const SearchArea: React.FC = ({}) => {
               Search Ticket
             </button>
           </div>
-          <OurAdvantages />
+          <div className={"row-start-1 md:col-start-2"}>
+            <OurAdvantages />
+          </div>
         </div>
       </div>
     </div>
