@@ -26,8 +26,23 @@
   --var-secondary-50: #ff7470;
 }
 
+.wrapper {
+  max-width: 1752px;
+  width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+.container{
+  margin: 0 auto;
+}
 .center-item{
   left: 50%;
   transform: translate(-50%,0)
+}
+.language-select option.tr { background-image: url('../public/assets/images/tr-flag.svg');}
+.language-select option.en { background-image: url('../public/assets/images/en-flag.svg');}
 
+
+.menu-items {
+ @apply cursor-pointer opacity-90 hover:opacity-100
 }

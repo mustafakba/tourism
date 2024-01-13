@@ -1,0 +1,155 @@
+[{
+  "trip_number": "001",
+  "departure_location": "Istanbul",
+  "arrival_location": "Ankara",
+  "trip_date": "2024-06-15",
+  "trip_details": {
+    "bus_brand": "Mercedes",
+    "brand_name": "NextJS Tourism",
+    "number_of_breaks": 3,
+    "trip_price": 153
+  },
+  "seat_arrangement": [
+    {"seat_id": "A1", "gender": "female", "selected": false},
+    {"seat_id": "A2", "gender": "female", "selected": false},
+    {"seat_id": "A3", "gender": "female", "selected": false},
+    {"seat_id": "A4", "gender": "female", "selected": false},
+    {"seat_id": "A5", "gender": "female", "selected": false},
+    {"seat_id": "A6", "gender": "female", "selected": false},
+    {"seat_id": "B1", "gender": "female", "selected": true},
+    {"seat_id": "B2", "gender": "female", "selected": true},
+    {"seat_id": "B3", "gender": "female", "selected": true},
+    {"seat_id": "B4", "gender": "female", "selected": true},
+    {"seat_id": "B5", "gender": "female", "selected": true},
+    {"seat_id": "B6", "gender": "female", "selected": true}
+  ]
+},{
+  "trip_number": "010",
+  "departure_location": "Ankara",
+  "arrival_location": "Istanbul",
+  "trip_date": "2024-06-15",
+  "trip_details": {
+    "bus_brand": "Mercedes",
+    "brand_name": "NextJS Tourism",
+    "number_of_breaks": 3,
+    "trip_price": 153
+  },
+  "seat_arrangement": [
+    {"seat_id": "A1", "gender": "female", "selected": false},
+    {"seat_id": "A2", "gender": "female", "selected": false},
+    {"seat_id": "A3", "gender": "female", "selected": false},
+    {"seat_id": "A4", "gender": "female", "selected": false},
+    {"seat_id": "A5", "gender": "female", "selected": false},
+    {"seat_id": "A6", "gender": "female", "selected": false},
+    {"seat_id": "B1", "gender": "male", "selected": true},
+    {"seat_id": "B2", "gender": "male", "selected": true},
+    {"seat_id": "B3", "gender": "male", "selected": false},
+    {"seat_id": "B4", "gender": "male", "selected": false},
+    {"seat_id": "B5", "gender": "female", "selected": true},
+    {"seat_id": "B6", "gender": "female", "selected": true}
+  ]
+},{
+  "trip_number": "003",
+  "departure_location": "Izmir",
+  "arrival_location": "Antalya",
+  "trip_date": "2024-06-16",
+  "trip_details": {
+    "bus_brand": "Volvo",
+    "brand_name": "Coastline Travels",
+    "number_of_breaks": 2,
+    "trip_price": 180
+  },
+  "seat_arrangement": [
+    {"seat_id": "A1", "gender": "male", "selected": false},
+    {"seat_id": "A2", "gender": "male", "selected": false},
+    {"seat_id": "A3", "gender": "female", "selected": false},
+    {"seat_id": "A4", "gender": "female", "selected": false},
+    {"seat_id": "A5", "gender": "male", "selected": false},
+    {"seat_id": "A6", "gender": "male", "selected": false},
+    {"seat_id": "B1", "gender": "female", "selected": true},
+    {"seat_id": "B2", "gender": "female", "selected": true},
+    {"seat_id": "B3", "gender": "male", "selected": true},
+    {"seat_id": "B4", "gender": "male", "selected": true},
+    {"seat_id": "B5", "gender": "female", "selected": true},
+    {"seat_id": "B6", "gender": "female", "selected": true}
+  ]
+},
+  {
+    "trip_number": "004",
+    "departure_location": "Antalya",
+    "arrival_location": "Izmir",
+    "trip_date": "2024-06-17",
+    "trip_details": {
+      "bus_brand": "Scania",
+      "brand_name": "Sunshine Express",
+      "number_of_breaks": 1,
+      "trip_price": 200
+    },
+    "seat_arrangement": [
+      {"seat_id": "A1", "gender": "male", "selected": false},
+      {"seat_id": "A2", "gender": "male", "selected": false},
+      {"seat_id": "A3", "gender": "female", "selected": false},
+      {"seat_id": "A4", "gender": "female", "selected": false},
+      {"seat_id": "A5", "gender": "male", "selected": false},
+      {"seat_id": "A6", "gender": "male", "selected": false},
+      {"seat_id": "B1", "gender": "female", "selected": true},
+      {"seat_id": "B2", "gender": "female", "selected": true},
+      {"seat_id": "B3", "gender": "male", "selected": true},
+      {"seat_id": "B4", "gender": "male", "selected": true},
+      {"seat_id": "B5", "gender": "female", "selected": true},
+      {"seat_id": "B6", "gender": "female", "selected": true}
+    ]
+  },
+  {
+    "trip_number": "005",
+    "departure_location": "Bursa",
+    "arrival_location": "Istanbul",
+    "trip_date": "2024-06-18",
+    "trip_details": {
+      "bus_brand": "MAN",
+      "brand_name": "Greenways Travel",
+      "number_of_breaks": 2,
+      "trip_price": 170
+    },
+    "seat_arrangement": [
+      {"seat_id": "A1", "gender": "female", "selected": false},
+      {"seat_id": "A2", "gender": "female", "selected": false},
+      {"seat_id": "A3", "gender": "male", "selected": false},
+      {"seat_id": "A4", "gender": "male", "selected": false},
+      {"seat_id": "A5", "gender": "female", "selected": false},
+      {"seat_id": "A6", "gender": "female", "selected": false},
+      {"seat_id": "B1", "gender": "male", "selected": true},
+      {"seat_id": "B2", "gender": "male", "selected": true},
+      {"seat_id": "B3", "gender": "female", "selected": true},
+      {"seat_id": "B4", "gender": "female", "selected": true},
+      {"seat_id": "B5", "gender": "male", "selected": true},
+      {"seat_id": "B6", "gender": "male", "selected": true}
+    ]
+  },
+  {
+    "trip_number": "006",
+    "departure_location": "Istanbul",
+    "arrival_location": "Cappadocia",
+    "trip_date": "2024-06-20",
+    "trip_details": {
+      "bus_brand": "Setra",
+      "brand_name": "Dreamland Travels",
+      "number_of_breaks": 3,
+      "trip_price": 220
+    },
+    "seat_arrangement": [
+      {"seat_id": "A1", "gender": "female", "selected": false},
+      {"seat_id": "A2", "gender": "female", "selected": false},
+      {"seat_id": "A3", "gender": "male", "selected": false},
+      {"seat_id": "A4", "gender": "male", "selected": false},
+      {"seat_id": "A5", "gender": "female", "selected": false},
+      {"seat_id": "A6", "gender": "female", "selected": false},
+      {"seat_id": "B1", "gender": "male", "selected": true},
+      {"seat_id": "B2", "gender": "male", "selected": true},
+      {"seat_id": "B3", "gender": "female", "selected": true},
+      {"seat_id": "B4", "gender": "female", "selected": true},
+      {"seat_id": "B5", "gender": "male", "selected": true},
+      {"seat_id": "B6", "gender": "male", "selected": true}
+    ]
+  }
+]
