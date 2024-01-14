@@ -2,9 +2,8 @@
 
 import { Provider } from "react-redux";
 import { store } from "@/provider/redux/store";
-import React from "react"; // React'i import edin
+import React from "react";
 
-// TypeScript için children'ın tipini belirtin
 interface ReduxProviderProps {
   children: React.ReactNode;
 }

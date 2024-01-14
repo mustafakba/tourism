@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useSelector, useDispatch } from "react-redux";
-import { clearUser } from "@/provider/redux/users/usersSlice";
+import { clearUser, setUser } from "@/provider/redux/users/usersSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowRightFromBracket,
@@ -22,9 +22,8 @@ interface User {
 }
 
 const Header = () => {
-  const [user, setUser] = useState(null);
   // @ts-ignore
-  const userLogged = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user);
 
   const dispatch = useDispatch();
   const router = useRouter();
@@ -33,15 +32,8 @@ const Header = () => {
   const handleMenuToggle = () => {
     setIsMobileMenu(!mobileMenu);
   };
-  useEffect(() => {
-    if (userLogged) {
-      setUser(userLogged);
-    } else {
-      checkLocalStorage();
-    }
-  }, [userLogged]);
 
-  const checkLocalStorage = () => {
+  useEffect(() => {
     const storedUser = localStorage.getItem("user");
     const expiryTime = localStorage.getItem("expiryTime");
 
@@ -50,13 +42,13 @@ const Header = () => {
       const expiry = parseInt(expiryTime, 10);
 
       if (currentTime < expiry) {
-        setUser(JSON.parse(storedUser));
+        const user = JSON.parse(storedUser);
+        dispatch(setUser(user)); // Redux store'una kullanıcı bilgisini dispatch et
       } else {
-        // Süre dolduysa localStorage temizle ve kullanıcıyı çıkış yap
-        handleLogout();
+        handleLogout(); // Süre dolduysa çıkış işlemi yap
       }
     }
-  };
+  }, []);
 
   const handleLogout = () => {
     const isConfirmed = window.confirm(
@@ -102,7 +94,60 @@ const Header = () => {
               <FontAwesomeIcon icon={faBars} />
             </button>
           </div>
+          <div className={"auth-bar hidden md:block"}>
+            {
+              // @ts-ignore
 
+              user?.firstName ? (
+                <div className="user-info flex gap-x-2 items-center">
+                  <div
+                    className={
+                      "opacity-90 hover:opacity-100 duration-200 text-center bg-gray-50 py-1 px-4 rounded text-primary-200"
+                    }
+                  >
+                    <FontAwesomeIcon className={"mr-2"} icon={faUser} />
+                    <span>
+                      {
+                        // @ts-ignore
+
+                        user.firstName
+                      }
+                    </span>
+                  </div>
+                  <button
+                    className={
+                      "opacity-90 hover:opacity-100 gap-x-2 duration-200 text-center bg-gray-50 py-1 px-4 rounded text-primary-200"
+                    }
+                    onClick={handleLogout}
+                  >
+                    <span className={"mr-2"}>Log Out</span>
+                    <FontAwesomeIcon icon={faArrowRightFromBracket} />
+                  </button>
+                </div>
+              ) : (
+                <div className={"flex gap-x-3"}>
+                  <Link href="/login">
+                    <button
+                      className={
+                        "opacity-90 hover:opacity-100 duration-200 text-center bg-gray-50 py-1 px-4 rounded text-primary-200"
+                      }
+                    >
+                      Login
+                    </button>
+                  </Link>
+                  <Link href="/signup">
+                    <button
+                      className={
+                        "opacity-90 hover:opacity-100 duration-200 text-center bg-gray-50 py-1 px-4 rounded text-primary-200"
+                      }
+                    >
+                      Sign Up
+                    </button>
+                  </Link>
+                </div>
+              )
+            }
+          </div>
           <nav
             className={
               "flex md:hidden w-full transition-all top-0 min-h-[100vh] z-[120] fixed duration-700 bg-[#6750ff]" +
@@ -202,60 +247,6 @@ const Header = () => {
               </Link>
             </ul>
           </nav>
-          <div className={"auth-bar hidden md:block"}>
-            {
-              // @ts-ignore
-
-              user?.firstName ? (
-                <div className="user-info flex gap-x-2 items-center">
-                  <div
-                    className={
-                      "opacity-90 hover:opacity-100 duration-200 text-center bg-gray-50 py-1 px-4 rounded text-primary-200"
-                    }
-                  >
-                    <FontAwesomeIcon className={"mr-2"} icon={faUser} />
-                    <span>
-                      {
-                        // @ts-ignore
-
-                        user.firstName
-                      }
-                    </span>
-                  </div>
-                  <button
-                    className={
-                      "opacity-90 hover:opacity-100 gap-x-2 duration-200 text-center bg-gray-50 py-1 px-4 rounded text-primary-200"
-                    }
-                    onClick={handleLogout}
-                  >
-                    <span className={"mr-2"}>Log Out</span>
-                    <FontAwesomeIcon icon={faArrowRightFromBracket} />
-                  </button>
-                </div>
-              ) : (
-                <div className={"flex gap-x-3"}>
-                  <Link href="/login">
-                    <button
-                      className={
-                        "opacity-90 hover:opacity-100 duration-200 text-center bg-gray-50 py-1 px-4 rounded text-primary-200"
-                      }
-                    >
-                      Login
-                    </button>
-                  </Link>
-                  <Link href="/signup">
-                    <button
-                      className={
-                        "opacity-90 hover:opacity-100 duration-200 text-center bg-gray-50 py-1 px-4 rounded text-primary-200"
-                      }
-                    >
-                      Sign Up
-                    </button>
-                  </Link>
-                </div>
-              )
-            }
-          </div>
         </header>
       </div>
     </div>

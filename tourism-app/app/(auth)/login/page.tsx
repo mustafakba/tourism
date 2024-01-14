@@ -65,13 +65,13 @@ const LoginForm: React.FC = () => {
             birthDate: calculateAge(data.birthDate),
             gender: data.gender,
           };
+          const expiryTime = new Date().getTime() + 2 * 60 * 60 * 1000; // 2 saat sonrasını hesapla
+          localStorage.setItem("user", JSON.stringify(userData));
+          localStorage.setItem("expiryTime", expiryTime.toString());
           if (data) {
             dispatch(setUser(userData));
             router.push("/");
           }
-          const expiryTime = new Date().getTime() + 2 * 60 * 60 * 1000; // 2 saat sonrasını hesapla
-          localStorage.setItem("user", JSON.stringify(userData));
-          localStorage.setItem("expiryTime", expiryTime.toString());
         });
         toast.success("Başarıyla giriş yapıldı.");
       } catch (error) {
