@@ -59,6 +59,8 @@ const LoginForm: React.FC = () => {
           console.log("Kullanıcı Bilgileri:", doc.id, " => ", doc.data());
           const data = doc.data();
           userData = {
+            firstName: data.firstName,
+            lastName: data.lastName,
             email: data.email,
             birthDate: calculateAge(data.birthDate),
             gender: data.gender,
@@ -67,6 +69,9 @@ const LoginForm: React.FC = () => {
             dispatch(setUser(userData));
             router.push("/");
           }
+          const expiryTime = new Date().getTime() + 2 * 60 * 60 * 1000; // 2 saat sonrasını hesapla
+          localStorage.setItem("user", JSON.stringify(userData));
+          localStorage.setItem("expiryTime", expiryTime.toString());
         });
         toast.success("Başarıyla giriş yapıldı.");
       } catch (error) {
@@ -78,7 +83,7 @@ const LoginForm: React.FC = () => {
   });
 
   return (
-    <div className="bg-primary-color w-[40%] p-8 bg-white relative rounded ml-auto mr-auto">
+    <div className="bg-primary-color h-full w-[90%] md:w-[40%] mt-10 md:mt-0 md:p-8 bg-white relative rounded ml-auto mr-auto">
       <div className="authBanner flex flex-col w-full">
         <Image
           className={"w-full max-h-[200px] rounded"}
@@ -89,7 +94,7 @@ const LoginForm: React.FC = () => {
         />
         <div
           className={
-            "text-center absolute bg-white px-4 py-4 top-[18%] rounded center-item text-primary-500 italic mb-4"
+            "text-center absolute bg-white px-4 py-4 top-[30%] md:top-[18%] rounded center-item text-primary-500 italic mb-4"
           }
         >
           <Link href={"/"}>
@@ -160,7 +165,7 @@ const LoginForm: React.FC = () => {
         }
       >
         <Link
-          className={"w-full items-center justify-center pt-4"}
+          className={"w-full items-center justify-center my-5 md:my-0 pt-4"}
           href={"/signup"}
         >
           You don't have a account ? Signup.

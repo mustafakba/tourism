@@ -11,7 +11,7 @@ interface ourInfosCartProps {
 const OurInfos = ({ icon, text }) => {
   return (
     <div>
-      <div className="flex flex-col gap-y-3 justify-center p-4 items-center bg-primary-50 rounded-xl advantage-cart shadow-lg">
+      <div className="opacity-[95%] hover:opacity-100 cursor-pointer duration-200 flex flex-col gap-y-3 justify-center p-4 items-center bg-primary-50 rounded-xl advantage-cart shadow-lg">
         <div className="md:text-3xl">
           <FontAwesomeIcon color={"rgb(255,255,255)"} icon={icon} />
         </div>

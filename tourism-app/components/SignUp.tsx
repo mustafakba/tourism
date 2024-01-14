@@ -95,7 +95,7 @@ const SignupForm: React.FC = () => {
   };
 
   return (
-    <div className="bg-primary-color w-[40%] p-8 bg-white relative rounded ml-auto mr-auto">
+    <div className="bg-primary-color w-[90%] md:w-[40%] mt-10 md:mt-0 md:p-8 bg-white relative rounded ml-auto mr-auto">
       <div className="authBanner flex flex-col w-full">
         <Image
           className={"w-full max-h-[200px] rounded"}
@@ -125,8 +125,8 @@ const SignupForm: React.FC = () => {
         className={"flex flex-col gap-y-4 mt-10"}
         onSubmit={formik.handleSubmit}
       >
-        <div className={"md:flex gap-x-2"}>
-          <div className={"w-1/2 flex flex-col"}>
+        <div className={"flex flex-col md:flex-row gap-y-1 md:gap-y-0 gap-x-2"}>
+          <div className={"md:w-1/2 flex flex-col"}>
             <label htmlFor="name">Name*</label>
             <input
               className={
@@ -143,7 +143,7 @@ const SignupForm: React.FC = () => {
               <div style={{ color: "red" }}>{formik.errors.firstName}</div>
             ) : null}
           </div>
-          <div className={"w-1/2 flex flex-col"}>
+          <div className={"md:w-1/2 flex flex-col"}>
             <label htmlFor="surname">Surname*</label>
             <input
               className={
@@ -161,7 +161,7 @@ const SignupForm: React.FC = () => {
             ) : null}
           </div>
         </div>
-        <div className={"flex flex-col gap-1-2"}>
+        <div className={"flex flex-col gap-1"}>
           <label htmlFor="email">Email address*</label>
           <input
             className={
@@ -179,7 +179,7 @@ const SignupForm: React.FC = () => {
             <div style={{ color: "red" }}>{formik.errors.email}</div>
           ) : null}
         </div>
-        <div className={"flex flex-col gap-1-2"}>
+        <div className={"flex flex-col gap-1"}>
           <label htmlFor="password">Password</label>
           <input
             className={
@@ -196,7 +196,7 @@ const SignupForm: React.FC = () => {
             <div style={{ color: "red" }}>{formik.errors.password}</div>
           ) : null}
         </div>
-        <div className={"flex flex-col gap-1-2"}>
+        <div className={"flex flex-col gap-1"}>
           <label htmlFor="gender">Gender</label>
           <select
             id={"gender"}
@@ -248,7 +248,7 @@ const SignupForm: React.FC = () => {
         }
       >
         <Link
-          className={"w-full items-center justify-center pt-4"}
+          className={"w-full pb-10 md:pb-0 items-center justify-center pt-4"}
           href={"/login"}
         >
           Do you have a account ? Log In

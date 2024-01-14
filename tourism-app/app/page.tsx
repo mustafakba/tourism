@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useSelector } from "react-redux";
+
 import Image from "next/image";
 import SearchBar from "@/components/shared/SearchBar";
 import HeroSection from "@/components/HeroSection";
@@ -8,6 +9,8 @@ import OurInfos from "@/components/OurInfos";
 import { faPlaneSlash } from "@fortawesome/free-solid-svg-icons";
 
 interface User {
+  firstName: string;
+  lastName: string;
   email: string;
   birthDate: string; // veya uygun tür
   gender: string; // veya uygun tür
@@ -24,14 +27,14 @@ export default function Home() {
       </section>
       <section
         className={
-          "my-10 items-center justify-center ml-auto mr-auto flex flex-col"
+          "my-10 items-center wrapper justify-center ml-auto mr-auto flex flex-col"
         }
       >
-        <h4 className={"mb-10 italic border-b text-2xl"}>
+        <h4 className={"my-10 md:mb-10 italic border-b text-2xl"}>
           {" "}
           Why work with us ?
         </h4>
-        <div className="about-us container gap-x-4 flex md:flex-row flex-row justify-between w-full">
+        <div className="about-us container gap-x-4 grid grid-cols-2 gap-y-5 md:flex-row flex-row justify-between w-full">
           <OurInfos
             text={
               "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur dolores doloribus dolorum explicabo fugit quis quo sit vitae voluptatem."

@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <main
       className={
-        "min-h-screen bg-gray-50  flex w-full gap-y-[20px] flex-col items-center justify-center"
+        "min-h-screen bg-gray-50  flex w-full gap-y-[20px] flex-col items-center md:justify-center"
       }
     >
       <div className={"flex w-full"}>{children}</div>
