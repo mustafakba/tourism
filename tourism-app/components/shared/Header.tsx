@@ -17,8 +17,8 @@ interface User {
   firstName: string;
   lastName: string;
   email: string;
-  birthDate: string; // veya uygun tür
-  gender: string; // veya uygun tür
+  birthDate: string;
+  gender: string;
 }
 
 const Header = () => {
@@ -43,9 +43,9 @@ const Header = () => {
 
       if (currentTime < expiry) {
         const user = JSON.parse(storedUser);
-        dispatch(setUser(user)); // Redux store'una kullanıcı bilgisini dispatch et
+        dispatch(setUser(user));
       } else {
-        handleLogout(); // Süre dolduysa çıkış işlemi yap
+        handleLogout();
       }
     }
   }, []);
@@ -60,7 +60,8 @@ const Header = () => {
       router.push("/login");
       localStorage.removeItem("user");
       localStorage.removeItem("expiryTime");
-      setUser(null); // Kullanıcı durumunu sıfırla
+      // @ts-ignore
+      setUser(null);
     }
   };
 

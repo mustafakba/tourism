@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import AdvantageCard from "@/components/AdvantageCart";
+import { setTrips } from "@/provider/redux/trips/tripSlice";
+import { useDispatch } from "react-redux";
+
+// @ts-ignore
+import { formatDate } from "@/utils/FormatDate"; // utils klasöründeki formatDate fonksiyonunu import edin
+
 import {
   faClock,
   faCoins,
@@ -14,24 +19,50 @@ import {
   faXmarkSquare,
 } from "@fortawesome/free-solid-svg-icons";
 import OurAdvantages from "@/components/OurAdvantages";
-
+import { toast } from "react-toastify";
+import { filter } from "minimatch";
+import { router } from "next/client";
+import { useRouter } from "next/navigation";
 const SearchArea: React.FC = ({}) => {
-  const [from, setFrom] = useState<string>("");
-  const [to, setTo] = useState<string>("");
+  const [from, setFrom] = useState<string>("İstanbul");
+  const [to, setTo] = useState<string>("İstanbul");
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
-  const cities = [
-    "İstanbul",
-    "Ankara",
-    "Antalya",
-    "İzmir",
-    "Bursa",
-    "Nevşehir",
-    "Hakkari",
-  ];
+  const cities = ["Istanbul", "Ankara", "Antalya"];
+  const [allTrips, setAllTrips] = useState([]);
+  const dispatch = useDispatch();
+  const router = useRouter();
+
   const handleSearchClick = () => {
     console.log("From:", from);
     console.log("To:", to);
-    console.log("Date:", selectedDate?.toLocaleDateString());
+    const formattedDate = formatDate(selectedDate);
+    console.log("Date:", formattedDate);
+
+    fetch("http://localhost:8000/trips")
+      .then((response) => response.json())
+      .then((data) => {
+        const filteredData = data.filter(
+          (trip: {
+            departure_location: string;
+            arrival_location: string;
+            trip_date: string;
+          }) => {
+            return (
+              trip.departure_location === from &&
+              trip.arrival_location === to &&
+              trip.trip_date === formattedDate
+            );
+          },
+        );
+
+        console.log(filteredData);
+        dispatch(setTrips(filteredData));
+        localStorage.setItem("trips", JSON.stringify(filteredData));
+        router.push("/seferler");
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   };
 
   return (
