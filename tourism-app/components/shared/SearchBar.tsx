@@ -26,8 +26,8 @@ import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 
 const SearchArea: React.FC = ({}) => {
-  const [from, setFrom] = useState<string>("İstanbul");
-  const [to, setTo] = useState<string>("İstanbul");
+  const [from, setFrom] = useState<string>("");
+  const [to, setTo] = useState<string>("");
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
   const cities = ["Istanbul", "Ankara", "Antalya"];
   const [allTrips, setAllTrips] = useState([]);

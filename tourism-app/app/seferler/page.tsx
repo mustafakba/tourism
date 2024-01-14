@@ -30,9 +30,11 @@ const TripList: React.FC = () => {
     <div className={"wrapper"}>
       <SearchBar />
       <div className="container">
-        <div>
-          We found {trips.length} bus schedules matching your search criteria.
-        </div>
+        {trips.length > 0 && (
+          <div>
+            We found {trips.length} bus schedules matching your search criteria.
+          </div>
+        )}
         {trips.length > 0 ? (
           trips.map((trip, index) => {
             // Burada available seat sayısını hesaplıyoruz
@@ -105,7 +107,7 @@ const TripList: React.FC = () => {
             );
           })
         ) : (
-          <p>Aradığınız kriterlerde sefer bulunamamıştır.</p>
+          <p>There are no sessions with the criteria you are looking for.</p>
         )}
       </div>
     </div>
