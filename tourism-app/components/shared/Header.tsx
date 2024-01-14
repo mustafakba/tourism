@@ -23,6 +23,9 @@ interface User {
 
 const Header = () => {
   const [user, setUser] = useState(null);
+  // @ts-ignore
+  const userLogged = useSelector((state) => state.user);
+
   const dispatch = useDispatch();
   const router = useRouter();
   const [mobileMenu, setIsMobileMenu] = useState(false);
@@ -30,22 +33,30 @@ const Header = () => {
   const handleMenuToggle = () => {
     setIsMobileMenu(!mobileMenu);
   };
-
   useEffect(() => {
+    if (userLogged) {
+      setUser(userLogged);
+    } else {
+      checkLocalStorage();
+    }
+  }, [userLogged]);
+
+  const checkLocalStorage = () => {
     const storedUser = localStorage.getItem("user");
     const expiryTime = localStorage.getItem("expiryTime");
 
-    if (storedUser) {
+    if (storedUser && expiryTime) {
       const currentTime = new Date().getTime();
-      if (currentTime) {
+      const expiry = parseInt(expiryTime, 10);
+
+      if (currentTime < expiry) {
         setUser(JSON.parse(storedUser));
       } else {
-        // Süre dolduysa localStorage temizle
-        localStorage.removeItem("user");
-        localStorage.removeItem("expiryTime");
+        // Süre dolduysa localStorage temizle ve kullanıcıyı çıkış yap
+        handleLogout();
       }
     }
-  }, []);
+  };
 
   const handleLogout = () => {
     const isConfirmed = window.confirm(
@@ -61,21 +72,6 @@ const Header = () => {
     }
   };
 
-  const [selectedLanguage, setSelectedLanguage] = useState("tr");
-  const [chooseLanguage, setChooseLanguage] = useState<boolean>(false);
-
-  const languages = [
-    { code: "tr", name: "TR" },
-    { code: "en", name: "EN" },
-  ];
-
-  // Dil seçimi yapacak fonksiyon
-  const handleLanguageChange = (langCode: React.SetStateAction<string>) => {
-    setSelectedLanguage(langCode);
-  };
-  let AiOutlineClose;
-  // @ts-ignore
-  // @ts-ignore
   return (
     <div className={"bg-primary-50 shadow-xl"}>
       <div className={"wrapper text-white"}>
@@ -109,7 +105,7 @@ const Header = () => {
 
           <nav
             className={
-              "w-full transition-all top-0 min-h-[100vh] z-[120] fixed duration-700 bg-[#6750ff]" +
+              "flex md:hidden w-full transition-all top-0 min-h-[100vh] z-[120] fixed duration-700 bg-[#6750ff]" +
               (mobileMenu ? " right-0 " : " right-[-100%] ")
             }
           >
@@ -141,7 +137,7 @@ const Header = () => {
                   />
                 </button>
               </div>
-              <nav className="menu flex flex-col gap-y-5 justify-center">
+              <nav className="menu  flex md:hidden flex-col gap-y-5 justify-center">
                 <div className={"menu-items"}>Otobüs Seferleri</div>
                 <div className={"menu-items"}>Hizmetlerimiz</div>
                 <div className={"menu-items"}>Otobüsüm-Yolcum Nerede</div>
@@ -201,7 +197,7 @@ const Header = () => {
                   )
                 }
               </nav>
-              <Link className="my-4" href={"/create-book"}>
+              <Link className="my-4" href={"/"}>
                 <button onClick={handleMenuToggle}>Kapat</button>
               </Link>
             </ul>
