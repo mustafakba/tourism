@@ -4,6 +4,7 @@
     "departure_location": "Ankara",
     "arrival_location": "Antalya",
     "trip_date": "15/01/2024",
+    "time" : "12:45",
     "trip_details": {
       "bus_brand": "Mercedes",
       "brand_name": "NextJS Tourism",
@@ -25,6 +26,7 @@
     "departure_location": "Ankara",
     "arrival_location": "Istanbul",
     "trip_date": "15/01/2024",
+    "time" :  "12:45",
     "trip_details": {
       "bus_brand": "Mercedes",
       "brand_name": "NextJS Tourism",
@@ -50,6 +52,7 @@
     "departure_location": "Izmir",
     "arrival_location": "Antalya",
     "trip_date": "2024-06-16",
+    "time" :  "12:45",
     "trip_details": {
       "bus_brand": "Volvo",
       "brand_name": "Coastline Travels",
@@ -76,6 +79,7 @@
       "departure_location": "Antalya",
       "arrival_location": "Izmir",
       "trip_date": "15/01/2024",
+      "time" :  "12:45",
       "trip_details": {
         "bus_brand": "Scania",
         "brand_name": "Sunshine Express",
@@ -98,10 +102,11 @@
       ]
     },
     {
-      "trip_number": "004",
+      "trip_number": "005",
       "departure_location": "Ankara",
       "arrival_location": "Antalya",
       "trip_date": "15/01/2024",
+      "time" :  "12:45",
       "trip_details": {
         "bus_brand": "Scania",
         "brand_name": "Sunshine Express",

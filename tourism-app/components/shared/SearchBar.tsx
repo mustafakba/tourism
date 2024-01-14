@@ -23,6 +23,8 @@ import { toast } from "react-toastify";
 import { filter } from "minimatch";
 import { router } from "next/client";
 import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
+
 const SearchArea: React.FC = ({}) => {
   const [from, setFrom] = useState<string>("İstanbul");
   const [to, setTo] = useState<string>("İstanbul");
@@ -31,6 +33,8 @@ const SearchArea: React.FC = ({}) => {
   const [allTrips, setAllTrips] = useState([]);
   const dispatch = useDispatch();
   const router = useRouter();
+  const pathname = usePathname();
+  const isTripsPage = pathname === "/seferler";
 
   const handleSearchClick = () => {
     console.log("From:", from);
@@ -66,13 +70,27 @@ const SearchArea: React.FC = ({}) => {
   };
 
   return (
-    <div className="flex wrapper absolute top-0 md:top-[23%] flex-col w-full gap-4">
+    <div
+      className={`flex wrapper ${
+        isTripsPage
+          ? "relative top-0"
+          : "absolute top-0 md:top-[23%] flex-col w-full gap-4"
+      } `}
+    >
       <div className={"container rounded-xl py-5"}>
         <div
-          className={"grid md:grid-cols-2 gap-y-8 gap-x-4 px-4 justify-around"}
+          className={`${
+            isTripsPage
+              ? "min-w-[100%] justify-between flex px-0"
+              : "grid md:grid-cols-2 justify-around"
+          } gap-y-8 gap-x-4 px-4 `}
         >
-          <div className="search-ticket-area grid py-4 gap-y-1 px-4 rounded-xl  bg-gray-50">
-            <div className="flex flex-col">
+          <div
+            className={`${
+              isTripsPage ? "grid md:flex w-full gap-x-5" : "grid"
+            } search-ticket-area py-4 gap-y-1 px-4 rounded-xl bg-gray-50`}
+          >
+            <div className={`flex flex-col ${isTripsPage ? "md:w-1/4" : ""}`}>
               <label
                 htmlFor="from"
                 className="text-sm border-b py-1 font-medium text-gray-700"
@@ -92,7 +110,7 @@ const SearchArea: React.FC = ({}) => {
                 ))}
               </select>
             </div>
-            <div className="flex flex-col">
+            <div className={`flex flex-col ${isTripsPage ? "md:w-1/4" : ""}`}>
               <label
                 htmlFor="to"
                 className="text-sm border-b py-1 font-medium text-gray-700"
@@ -112,7 +130,7 @@ const SearchArea: React.FC = ({}) => {
                 ))}
               </select>
             </div>
-            <div className="flex flex-col">
+            <div className={`flex flex-col ${isTripsPage ? "md:w-1/4" : ""}`}>
               <label
                 htmlFor="date"
                 className="text-sm border-b py-1 font-medium text-gray-700"
@@ -130,16 +148,18 @@ const SearchArea: React.FC = ({}) => {
             </div>
             <button
               onClick={handleSearchClick}
-              className={
-                "bg-primary-50 px-4 py-3 text-white rounded-xl items-center justify-center flex"
-              }
+              className={`bg-primary-50 px-4 py-3 text-white rounded-xl items-center justify-center flex ${
+                isTripsPage ? "md:w-1/4" : ""
+              }`}
             >
               Search Ticket
             </button>
           </div>
-          <div className={"row-start-1 md:col-start-2"}>
-            <OurAdvantages />
-          </div>
+          {!isTripsPage && (
+            <div className={"row-start-1 md:col-start-2"}>
+              <OurAdvantages />
+            </div>
+          )}
         </div>
       </div>
     </div>

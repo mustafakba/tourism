@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface Trip {
+  time: ReactNode;
   trip_number: string;
   departure_location: string;
   arrival_location: string;
