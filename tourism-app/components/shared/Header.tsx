@@ -75,6 +75,7 @@ const Header = () => {
   };
   let AiOutlineClose;
   // @ts-ignore
+  // @ts-ignore
   return (
     <div className={"bg-primary-50 shadow-xl"}>
       <div className={"wrapper text-white"}>
@@ -145,50 +146,60 @@ const Header = () => {
                 <div className={"menu-items"}>Hizmetlerimiz</div>
                 <div className={"menu-items"}>Otobüsüm-Yolcum Nerede</div>
                 <div className={"menu-items"}>Yardım</div>
-                {user?.firstName ? (
-                  <div className="user-info flex gap-x-2 items-center">
-                    <div
-                      className={
-                        "opacity-90 hover:opacity-100 duration-200 text-center bg-gray-50 py-1 px-4 rounded text-primary-200"
-                      }
-                    >
-                      <FontAwesomeIcon className={"mr-2"} icon={faUser} />
-                      <span>{user.firstName}</span>
+
+                {
+                  // @ts-ignore
+
+                  user?.firstName ? (
+                    <div className="user-info flex gap-x-2 items-center">
+                      <div
+                        className={
+                          "opacity-90 hover:opacity-100 duration-200 text-center bg-gray-50 py-1 px-4 rounded text-primary-200"
+                        }
+                      >
+                        <FontAwesomeIcon className={"mr-2"} icon={faUser} />
+                        <span>
+                          {
+                            // @ts-ignore
+                            user.firstName
+                          }
+                        </span>
+                      </div>
+                      <button
+                        className={
+                          "opacity-90 hover:opacity-100 gap-x-2 duration-200 text-center bg-gray-50 py-1 px-4 rounded text-primary-200"
+                        }
+                        onClick={handleLogout}
+                      >
+                        <span className={"mr-2"}>Log Out</span>
+                        <FontAwesomeIcon icon={faArrowRightFromBracket} />
+                      </button>
                     </div>
-                    <button
-                      className={
-                        "opacity-90 hover:opacity-100 gap-x-2 duration-200 text-center bg-gray-50 py-1 px-4 rounded text-primary-200"
-                      }
-                      onClick={handleLogout}
-                    >
-                      <span className={"mr-2"}>Log Out</span>
-                      <FontAwesomeIcon icon={faArrowRightFromBracket} />
-                    </button>
-                  </div>
-                ) : (
-                  <div className={"flex gap-x-3"}>
-                    <Link href="/login">
-                      <button
-                        onClick={handleMenuToggle}
-                        className={
-                          "opacity-90 hover:opacity-100 duration-200 text-center bg-gray-50 py-1 px-4 rounded text-primary-200"
-                        }
-                      >
-                        Login
-                      </button>
-                    </Link>
-                    <Link href="/signup">
-                      <button
-                        onClick={handleMenuToggle}
-                        className={
-                          "opacity-90 hover:opacity-100 duration-200 text-center bg-gray-50 py-1 px-4 rounded text-primary-200"
-                        }
-                      >
-                        Sign Up
-                      </button>
-                    </Link>
-                  </div>
-                )}
+                  ) : (
+                    <div className={"flex gap-x-3"}>
+                      <Link href="/login">
+                        <button
+                          onClick={handleMenuToggle}
+                          className={
+                            "opacity-90 hover:opacity-100 duration-200 text-center bg-gray-50 py-1 px-4 rounded text-primary-200"
+                          }
+                        >
+                          Login
+                        </button>
+                      </Link>
+                      <Link href="/signup">
+                        <button
+                          onClick={handleMenuToggle}
+                          className={
+                            "opacity-90 hover:opacity-100 duration-200 text-center bg-gray-50 py-1 px-4 rounded text-primary-200"
+                          }
+                        >
+                          Sign Up
+                        </button>
+                      </Link>
+                    </div>
+                  )
+                }
               </nav>
               <Link className="my-4" href={"/create-book"}>
                 <button onClick={handleMenuToggle}>Kapat</button>
@@ -196,48 +207,58 @@ const Header = () => {
             </ul>
           </nav>
           <div className={"auth-bar hidden md:block"}>
-            {user?.firstName ? (
-              <div className="user-info flex gap-x-2 items-center">
-                <div
-                  className={
-                    "opacity-90 hover:opacity-100 duration-200 text-center bg-gray-50 py-1 px-4 rounded text-primary-200"
-                  }
-                >
-                  <FontAwesomeIcon className={"mr-2"} icon={faUser} />
-                  <span>{user.firstName}</span>
+            {
+              // @ts-ignore
+
+              user?.firstName ? (
+                <div className="user-info flex gap-x-2 items-center">
+                  <div
+                    className={
+                      "opacity-90 hover:opacity-100 duration-200 text-center bg-gray-50 py-1 px-4 rounded text-primary-200"
+                    }
+                  >
+                    <FontAwesomeIcon className={"mr-2"} icon={faUser} />
+                    <span>
+                      {
+                        // @ts-ignore
+
+                        user.firstName
+                      }
+                    </span>
+                  </div>
+                  <button
+                    className={
+                      "opacity-90 hover:opacity-100 gap-x-2 duration-200 text-center bg-gray-50 py-1 px-4 rounded text-primary-200"
+                    }
+                    onClick={handleLogout}
+                  >
+                    <span className={"mr-2"}>Log Out</span>
+                    <FontAwesomeIcon icon={faArrowRightFromBracket} />
+                  </button>
                 </div>
-                <button
-                  className={
-                    "opacity-90 hover:opacity-100 gap-x-2 duration-200 text-center bg-gray-50 py-1 px-4 rounded text-primary-200"
-                  }
-                  onClick={handleLogout}
-                >
-                  <span className={"mr-2"}>Log Out</span>
-                  <FontAwesomeIcon icon={faArrowRightFromBracket} />
-                </button>
-              </div>
-            ) : (
-              <div className={"flex gap-x-3"}>
-                <Link href="/login">
-                  <button
-                    className={
-                      "opacity-90 hover:opacity-100 duration-200 text-center bg-gray-50 py-1 px-4 rounded text-primary-200"
-                    }
-                  >
-                    Login
-                  </button>
-                </Link>
-                <Link href="/signup">
-                  <button
-                    className={
-                      "opacity-90 hover:opacity-100 duration-200 text-center bg-gray-50 py-1 px-4 rounded text-primary-200"
-                    }
-                  >
-                    Sign Up
-                  </button>
-                </Link>
-              </div>
-            )}
+              ) : (
+                <div className={"flex gap-x-3"}>
+                  <Link href="/login">
+                    <button
+                      className={
+                        "opacity-90 hover:opacity-100 duration-200 text-center bg-gray-50 py-1 px-4 rounded text-primary-200"
+                      }
+                    >
+                      Login
+                    </button>
+                  </Link>
+                  <Link href="/signup">
+                    <button
+                      className={
+                        "opacity-90 hover:opacity-100 duration-200 text-center bg-gray-50 py-1 px-4 rounded text-primary-200"
+                      }
+                    >
+                      Sign Up
+                    </button>
+                  </Link>
+                </div>
+              )
+            }
           </div>
         </header>
       </div>

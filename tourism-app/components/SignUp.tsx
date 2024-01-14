@@ -76,6 +76,7 @@ const SignupForm: React.FC = () => {
       } catch (error) {
         // Özel hata mesajını ayarla
         let errorMessage = "";
+        // @ts-ignore
         if (error.code === "auth/email-already-in-use") {
           errorMessage = "Bu e-posta hesabı zaten kayıtlı.";
         } else {
@@ -223,7 +224,8 @@ const SignupForm: React.FC = () => {
             onChange={handleBirthDateChange}
             value={
               formik.values.birthDate
-                ? formik.values.birthDate.toISOString().split("T")[0]
+                ? // @ts-ignore
+                  formik.values.birthDate.toISOString().split("T")[0]
                 : ""
             }
             placeholder="Birth Date"

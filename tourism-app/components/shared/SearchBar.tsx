@@ -28,6 +28,12 @@ const SearchArea: React.FC = ({}) => {
     "Nevşehir",
     "Hakkari",
   ];
+  const handleSearchClick = () => {
+    console.log("From:", from);
+    console.log("To:", to);
+    console.log("Date:", selectedDate?.toLocaleDateString());
+  };
+
   return (
     <div className="flex wrapper absolute top-0 md:top-[23%] flex-col w-full gap-4">
       <div className={"container rounded-xl py-5"}>
@@ -92,6 +98,7 @@ const SearchArea: React.FC = ({}) => {
               />
             </div>
             <button
+              onClick={handleSearchClick}
               className={
                 "bg-primary-50 px-4 py-3 text-white rounded-xl items-center justify-center flex"
               }
