@@ -155,7 +155,7 @@ const Header = () => {
               (mobileMenu ? " right-0 " : " right-[-100%] ")
             }
           >
-            <ul className="flex flex-col relative px-4 lg:px-16 py-4  gap-x-5 text-inverse-color tracking-widest">
+            <ul className="flex w-full flex-col relative px-4 lg:px-16 py-4 gap-x-5 text-inverse-color tracking-widest">
               <div className="mb-12 flex w-full justify-between">
                 <button
                   onClick={handleMenuToggle}

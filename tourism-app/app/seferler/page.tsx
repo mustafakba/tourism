@@ -44,7 +44,7 @@ const TripList: React.FC = () => {
             return (
               <div
                 className={
-                  "flex justify-between px-5 items-center py-5 bg-white w-full my-5"
+                  "flex overflow-x-auto gap-x-5 md:gap-x-0 justify-between px-5 items-center py-5 bg-white w-full my-5"
                 }
                 key={index}
               >

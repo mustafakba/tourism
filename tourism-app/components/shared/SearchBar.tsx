@@ -26,8 +26,8 @@ import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 
 const SearchArea: React.FC = ({}) => {
-  const [from, setFrom] = useState<string>("");
-  const [to, setTo] = useState<string>("");
+  const [from, setFrom] = useState<string>("Ankara");
+  const [to, setTo] = useState<string>("Antalya");
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
   const cities = ["Istanbul", "Ankara", "Antalya"];
   const [allTrips, setAllTrips] = useState([]);
@@ -71,10 +71,10 @@ const SearchArea: React.FC = ({}) => {
 
   return (
     <div
-      className={`flex wrapper ${
+      className={`flex  ${
         isTripsPage
           ? "relative top-0"
-          : "absolute top-0 md:top-[23%] flex-col w-full gap-4"
+          : "absolute wrapper top-0 md:top-[23%] flex-col w-full gap-4"
       } `}
     >
       <div className={"container rounded-xl py-5"}>
@@ -83,12 +83,12 @@ const SearchArea: React.FC = ({}) => {
             isTripsPage
               ? "min-w-[100%] justify-between flex px-0"
               : "grid md:grid-cols-2 justify-around"
-          } gap-y-8 gap-x-4 px-4 `}
+          } gap-y-8 gap-x-4 md:px-4 `}
         >
           <div
             className={`${
               isTripsPage ? "grid md:flex w-full gap-x-5" : "grid"
-            } search-ticket-area py-4 gap-y-1 px-4 rounded-xl bg-gray-50`}
+            } search-ticket-area py-4 gap-y-1 md:px-4 rounded-xl bg-gray-50`}
           >
             <div className={`flex flex-col ${isTripsPage ? "md:w-1/4" : ""}`}>
               <label
