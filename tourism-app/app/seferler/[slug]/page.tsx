@@ -67,6 +67,7 @@ const Page = () => {
     return <div>Sefer yükleniyor...</div>;
   }
 
+  // @ts-ignore
   return (
     <div className={"wrapper"}>
       <div className={"container"}>
@@ -105,6 +106,7 @@ const Page = () => {
             seats={trip.seat_arrangement}
             onRemoveSeat={handleRemoveSeat}
             onAddSeat={handleAddSeat}
+            //@ts-ignore
             userGender={undefined}
           />
         </div>

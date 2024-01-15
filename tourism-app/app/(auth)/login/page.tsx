@@ -1,8 +1,10 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { useSelector } from "react-redux";
+
 import {
   getDocs,
   query,
@@ -39,6 +41,9 @@ const validationSchema = Yup.object({
 const LoginForm: React.FC = () => {
   const dispatch = useDispatch();
   const router = useRouter();
+  // @ts-ignore
+  const user = useSelector((state) => state.user);
+
   const formik = useFormik({
     initialValues: initialValues,
     validationSchema: validationSchema,
@@ -83,6 +88,12 @@ const LoginForm: React.FC = () => {
     },
   });
 
+  useEffect(() => {
+    if (user.firstName) {
+      // Eğer user.firstName varsa, kullanıcı giriş yapmış demektir.
+      router.push("/"); // Ana sayfaya yönlendir.
+    }
+  }, [user, router]);
   return (
     <div className="bg-primary-color h-full w-[90%] md:w-[40%] mt-10 md:mt-0 md:p-8 bg-white relative rounded ml-auto mr-auto">
       <div className="authBanner flex flex-col w-full">
