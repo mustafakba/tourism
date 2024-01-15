@@ -137,14 +137,14 @@ const Page = () => {
         )}
 
         {paymentInitiated && (
-          <div>
+          <div className={"h-[50vh]"}>
             <div className="max-w-[500px] col-span-2 my-20 ml-auto mr-auto">
               {loading ? (
                 <div className="text-center flex flex-col gap-y-5 items-center my-5">
                   <Spinner />
                 </div>
               ) : !loading ? (
-                <div className="text-center h-[50vh] flex flex-col gap-y-5 items-center my-5">
+                <div className="text-center flex flex-col gap-y-5 items-center my-5">
                   <FontAwesomeIcon
                     color={"green"}
                     className={"text-[50px]"}
