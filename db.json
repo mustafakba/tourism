@@ -3,7 +3,7 @@
     "trip_number": "001",
     "departure_location": "Ankara",
     "arrival_location": "Antalya",
-    "trip_date": "15/01/2024",
+    "trip_date": "17/01/2024",
     "time" : "12:45",
     "trip_details": {
       "bus_brand": "Mercedes",
@@ -25,7 +25,7 @@
     "trip_number": "010",
     "departure_location": "Ankara",
     "arrival_location": "Istanbul",
-    "trip_date": "15/01/2024",
+    "trip_date": "16/01/2024",
     "time" :  "12:45",
     "trip_details": {
       "bus_brand": "Mercedes",
@@ -51,7 +51,7 @@
     "trip_number": "003",
     "departure_location": "Izmir",
     "arrival_location": "Antalya",
-    "trip_date": "2024-06-16",
+    "trip_date": "16/01/2024",
     "time" :  "12:45",
     "trip_details": {
       "bus_brand": "Volvo",
@@ -75,7 +75,7 @@
       "trip_number": "004",
       "departure_location": "Antalya",
       "arrival_location": "Izmir",
-      "trip_date": "15/01/2024",
+      "trip_date": "16/01/2024",
       "time" :  "12:45",
       "trip_details": {
         "bus_brand": "Scania",
@@ -102,7 +102,7 @@
       "trip_number": "005",
       "departure_location": "Ankara",
       "arrival_location": "Antalya",
-      "trip_date": "15/01/2024",
+      "trip_date": "19/01/2024",
       "time" :  "12:45",
       "trip_details": {
         "bus_brand": "Scania",

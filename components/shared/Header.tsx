@@ -82,10 +82,12 @@ const Header = () => {
             />
           </Link>
           <nav className="hidden menu md:flex justify-center gap-x-5 flex-1">
-            <div className={"menu-items"}>Otobüs Seferleri</div>
-            <div className={"menu-items"}>Hizmetlerimiz</div>
-            <div className={"menu-items"}>Otobüsüm-Yolcum Nerede</div>
-            <div className={"menu-items"}>Yardım</div>
+            <Link href={"/seferler"} className={"menu-items"}>
+              Trips
+            </Link>
+            <div>About Us</div>
+            <div>Who We Are</div>
+            <div>Help</div>
           </nav>
           <div className="block md:hidden">
             <button
