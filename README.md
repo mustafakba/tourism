@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Tourism App
 
-First, run the development server:
+Bu proje, turizm uygulaması için geliştirilmiş bir Next.js uygulamasıdır.
+
+## Kurulum
+
+Proje bağımlılıklarını yükleyin ve daha sonra npm run dev komutu ile projeyi çalıştırın.
 
 ```bash
-npm run dev
+proje bağımlılıklarını yükle -> npm install 
+
+database için json-server yükle -> npm i json-server
+
+database ayağa kaldır -> json-server --watch db.json --port 8000
+
+projeyi ayağa kaldır -> npm run dev
 # or
-yarn dev
+projeyi ayağa kaldır -> yarn dev
 # or
-pnpm dev
+projeyi ayağa kaldır -> pnpm dev
 # or
-bun dev
+projeyi ayağa kaldır -> bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Bazı Kullanılan Teknoloji ve Eklentiler
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+Firebase -> auth / login işlemleri 
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+json-server -> backend işlemleri 
 
-## Learn More
+formik -> Form yönetimi  
 
-To learn more about Next.js, take a look at the following resources:
+yup -> Veri doğrulama işlemleri kullanılır
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+react-redux -> state yönetimi 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+react-credit-cards -> kredi kartı arayüzü
 
-## Deploy on Vercel
+react-datepicker -> Tarih Seçimi
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## İçerik Olan Olan Tarihler ;
+
+```bash
+!! JSON-SERVER ÇALIŞTIRMAYI UNUTMAYIN LÜTFEN  
+-json-server --watch db.json --port 8000
+
+
+
+1- 
+"From": "Ankara",
+"To": "Antalya",
+"Date": "17/01/2024",
+
+
+2-
+"From": "Ankara",
+"To": "Istanbul",
+"Date": "16/01/2024",
+
+
+3-
+"From": "Ankara",
+"To": "Istanbul",
+"Date": "16/01/2024",
+
+4-
+"From": "Izmir",
+"To": "Antalya",
+"Date": "16/01/2024",
+
+5-
+"From": "Antalya",
+"To": "Izmir",
+"Date": "16/01/2024",
+```
+
+
+## Uygulama Görselleri ;
+
+Kayıt Olma Ekranı ; 
+![signup.png](public%2Fassets%2Fimages%2Fscreenshoots%2Fsignup.png)
+
+Kullanıcı Giriş Ekranı
+![login.png](public%2Fassets%2Fimages%2Fscreenshoots%2Flogin.png)
+
+Anasayfa
+![homepage.png](public%2Fassets%2Fimages%2Fscreenshoots%2Fhomepage.png)
+
+Filtreleme Sayfası
+![filterpage.png](public%2Fassets%2Fimages%2Fscreenshoots%2Ffilterpage.png)
+
+Detay Sayfası
+![detailpage.png](public%2Fassets%2Fimages%2Fscreenshoots%2Fdetailpage.png)
+
+Koltuk Seçimi
+![selectSeat.png](public%2Fassets%2Fimages%2Fscreenshoots%2FselectSeat.png)
+
+Bilet Detayları ve Ödeme Sayfası
+![paymentpage.png](public%2Fassets%2Fimages%2Fscreenshoots%2Fpaymentpage.png)
+
+Ödeme Tamamlandı Ekranı
+![successPage.png](public%2Fassets%2Fimages%2Fscreenshoots%2FsuccessPage.png)
