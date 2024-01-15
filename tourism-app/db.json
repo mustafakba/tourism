@@ -9,17 +9,17 @@
       "bus_brand": "Mercedes",
       "brand_name": "NextJS Tourism",
       "number_of_breaks": 3,
-      "trip_price": 153
+      "trip_price": 423
     },
     "seat_arrangement": [
-      {"seat_id": "A1", "gender": "female", "selected": false},
-      {"seat_id": "A2", "gender": "female", "selected": false},
-      {"seat_id": "A3", "gender": "female", "selected": false},
-      {"seat_id": "A4", "gender": "female", "selected": false},
+      {"seat_id": "A1", "gender": "", "selected": false},
+      {"seat_id": "A2", "gender": "", "selected": false},
+      {"seat_id": "A3", "gender": "", "selected": false},
+      {"seat_id": "A4", "gender": "male", "selected": true},
       {"seat_id": "B1", "gender": "female", "selected": true},
-      {"seat_id": "B2", "gender": "female", "selected": true},
+      {"seat_id": "B2", "gender": "male", "selected": true},
       {"seat_id": "B3", "gender": "female", "selected": true},
-      {"seat_id": "B4", "gender": "female", "selected": true}
+      {"seat_id": "B4", "gender": "", "selected": false}
     ]
   },{
     "trip_number": "010",
@@ -31,7 +31,7 @@
       "bus_brand": "Mercedes",
       "brand_name": "NextJS Tourism",
       "number_of_breaks": 3,
-      "trip_price": 153
+      "trip_price": 976
     },
     "seat_arrangement": [
       {"seat_id": "A1", "gender": "female", "selected": false},
@@ -57,21 +57,18 @@
       "bus_brand": "Volvo",
       "brand_name": "Coastline Travels",
       "number_of_breaks": 2,
-      "trip_price": 180
+      "trip_price": 1200
     },
     "seat_arrangement": [
       {"seat_id": "A1", "gender": "male", "selected": false},
       {"seat_id": "A2", "gender": "male", "selected": false},
-      {"seat_id": "A3", "gender": "female", "selected": false},
+      {"seat_id": "A3", "gender": "female", "selected": true},
       {"seat_id": "A4", "gender": "female", "selected": false},
-      {"seat_id": "A5", "gender": "male", "selected": false},
-      {"seat_id": "A6", "gender": "male", "selected": false},
       {"seat_id": "B1", "gender": "female", "selected": true},
       {"seat_id": "B2", "gender": "female", "selected": true},
-      {"seat_id": "B3", "gender": "male", "selected": true},
-      {"seat_id": "B4", "gender": "male", "selected": true},
-      {"seat_id": "B5", "gender": "female", "selected": true},
-      {"seat_id": "B6", "gender": "female", "selected": true}
+      {"seat_id": "B3", "gender": "male", "selected": false},
+      {"seat_id": "B4", "gender": "male", "selected": true}
+
     ]
   },
     {
@@ -84,7 +81,7 @@
         "bus_brand": "Scania",
         "brand_name": "Sunshine Express",
         "number_of_breaks": 1,
-        "trip_price": 200
+        "trip_price": 750
       },
       "seat_arrangement": [
         {"seat_id": "A1", "gender": "male", "selected": false},
@@ -111,7 +108,7 @@
         "bus_brand": "Scania",
         "brand_name": "Sunshine Express",
         "number_of_breaks": 1,
-        "trip_price": 200
+        "trip_price": 500
       },
       "seat_arrangement": [
         {"seat_id": "A1", "gender": "male", "selected": false},

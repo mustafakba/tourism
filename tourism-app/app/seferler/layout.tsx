@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <main>
-      <div className={"flex bg-gray-50 min-h-[70vh] w-full"}>{children}</div>
+      <div className={"flex bg-gray-50 min-h-[75vh] w-full"}>{children}</div>
     </main>
   );
 }

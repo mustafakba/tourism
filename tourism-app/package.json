@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@eventjet/react-seatmaps": "^1.0.4",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@fortawesome/free-regular-svg-icons": "^6.5.1",
@@ -16,6 +17,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@react-firebase/auth": "^0.2.10",
     "@reduxjs/toolkit": "^2.0.1",
+    "@seatsio/seatsio-react": "^14.8.0",
     "firebase": "^10.7.1",
     "formik": "^2.4.5",
     "next": "14.0.4",

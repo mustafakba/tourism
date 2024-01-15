@@ -46,3 +46,24 @@
 .menu-items {
  @apply cursor-pointer opacity-90 hover:opacity-100
 }
+
+.seat {
+  /* Ortak stil ayarları */
+}
+
+.female {
+  background-color: pink;
+}
+
+.male {
+  background-color: blue;
+}
+
+
+.available {
+  background-color: transparent;
+}
+
+.bus-bg{
+  background: url("../public/assets/images/bus.svg");
+}
