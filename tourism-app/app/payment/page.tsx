@@ -61,7 +61,7 @@ const Page = () => {
         )}
 
         {!paymentInitiated && (
-          <div className={"grid grid-cols-2"}>
+          <div className={"grid grid-cols-2 my-5"}>
             <div className={"flex justify-center gap-x-5 my-5"}>
               {tickets &&
                 tickets.map(
