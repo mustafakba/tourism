@@ -34,16 +34,16 @@
       "trip_price": 976
     },
     "seat_arrangement": [
-      {"seat_id": "A1", "gender": "female", "selected": false},
-      {"seat_id": "A2", "gender": "female", "selected": false},
-      {"seat_id": "A3", "gender": "female", "selected": false},
-      {"seat_id": "A4", "gender": "female", "selected": false},
-      {"seat_id": "A5", "gender": "female", "selected": false},
-      {"seat_id": "A6", "gender": "female", "selected": false},
+      {"seat_id": "A1", "gender": "", "selected": false},
+      {"seat_id": "A2", "gender": "", "selected": false},
+      {"seat_id": "A3", "gender": "", "selected": false},
+      {"seat_id": "A4", "gender": "", "selected": false},
+      {"seat_id": "A5", "gender": "", "selected": false},
+      {"seat_id": "A6", "gender": "", "selected": false},
       {"seat_id": "B1", "gender": "male", "selected": true},
       {"seat_id": "B2", "gender": "male", "selected": true},
-      {"seat_id": "B3", "gender": "male", "selected": false},
-      {"seat_id": "B4", "gender": "male", "selected": false},
+      {"seat_id": "B3", "gender": "", "selected": false},
+      {"seat_id": "B4", "gender": "", "selected": false},
       {"seat_id": "B5", "gender": "female", "selected": true},
       {"seat_id": "B6", "gender": "female", "selected": true}
     ]
@@ -60,13 +60,13 @@
       "trip_price": 1200
     },
     "seat_arrangement": [
-      {"seat_id": "A1", "gender": "male", "selected": false},
-      {"seat_id": "A2", "gender": "male", "selected": false},
+      {"seat_id": "A1", "gender": "", "selected": false},
+      {"seat_id": "A2", "gender": "", "selected": false},
       {"seat_id": "A3", "gender": "female", "selected": true},
-      {"seat_id": "A4", "gender": "female", "selected": false},
+      {"seat_id": "A4", "gender": "", "selected": false},
       {"seat_id": "B1", "gender": "female", "selected": true},
       {"seat_id": "B2", "gender": "female", "selected": true},
-      {"seat_id": "B3", "gender": "male", "selected": false},
+      {"seat_id": "B3", "gender": "", "selected": false},
       {"seat_id": "B4", "gender": "male", "selected": true}
 
     ]
@@ -84,12 +84,12 @@
         "trip_price": 750
       },
       "seat_arrangement": [
-        {"seat_id": "A1", "gender": "male", "selected": false},
-        {"seat_id": "A2", "gender": "male", "selected": false},
-        {"seat_id": "A3", "gender": "female", "selected": false},
-        {"seat_id": "A4", "gender": "female", "selected": false},
-        {"seat_id": "A5", "gender": "male", "selected": false},
-        {"seat_id": "A6", "gender": "male", "selected": false},
+        {"seat_id": "A1", "gender": "", "selected": false},
+        {"seat_id": "A2", "gender": "", "selected": false},
+        {"seat_id": "A3", "gender": "", "selected": false},
+        {"seat_id": "A4", "gender": "", "selected": false},
+        {"seat_id": "A5", "gender": "", "selected": false},
+        {"seat_id": "A6", "gender": "", "selected": false},
         {"seat_id": "B1", "gender": "female", "selected": true},
         {"seat_id": "B2", "gender": "female", "selected": true},
         {"seat_id": "B3", "gender": "male", "selected": true},
@@ -111,12 +111,12 @@
         "trip_price": 500
       },
       "seat_arrangement": [
-        {"seat_id": "A1", "gender": "male", "selected": false},
-        {"seat_id": "A2", "gender": "male", "selected": false},
-        {"seat_id": "A3", "gender": "female", "selected": false},
-        {"seat_id": "A4", "gender": "female", "selected": false},
-        {"seat_id": "A5", "gender": "male", "selected": false},
-        {"seat_id": "A6", "gender": "male", "selected": false},
+        {"seat_id": "A1", "gender": "", "selected": false},
+        {"seat_id": "A2", "gender": "", "selected": false},
+        {"seat_id": "A3", "gender": "", "selected": false},
+        {"seat_id": "A4", "gender": "", "selected": false},
+        {"seat_id": "A5", "gender": "", "selected": false},
+        {"seat_id": "A6", "gender": "", "selected": false},
         {"seat_id": "B1", "gender": "female", "selected": true},
         {"seat_id": "B2", "gender": "female", "selected": true},
         {"seat_id": "B3", "gender": "male", "selected": true},
@@ -127,3 +127,4 @@
     }
   ]
 }
+

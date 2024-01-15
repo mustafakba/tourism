@@ -65,14 +65,15 @@ const SeatGrid: React.FC<SeatGridProps> = ({
     }
 
     const tickets = selectedSeats.map((seatId) => ({
-      seatId,
-      // @ts-ignore
-      tripNumber: trip.trip_number,
+      seat_id: seatId,
+      trip_number: trip.trip_number,
     }));
 
-    console.log("tickets:", tickets);
-    // @ts-ignore
-    dispatch(addTicket(...tickets));
+    tickets.forEach((ticket) => {
+      dispatch(addTicket(ticket));
+    });
+
+    router.push("/payment");
   };
 
   const isSeatSelectable = (seat: {

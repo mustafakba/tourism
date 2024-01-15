@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div
       className={
-        "border-t flex-col border-primary-200 flex w-full justify-center text-center py-5 mt-10 "
+        "border-t flex-col border-primary-200 flex w-full justify-center text-center py-5 "
       }
     >
       <div> Tüm Hakları Saklıdır © Mustafa Kaba</div>
