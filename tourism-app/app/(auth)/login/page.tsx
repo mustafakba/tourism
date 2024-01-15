@@ -69,6 +69,7 @@ const LoginForm: React.FC = () => {
           localStorage.setItem("user", JSON.stringify(userData));
           localStorage.setItem("expiryTime", expiryTime.toString());
           if (data) {
+            // @ts-ignore
             dispatch(setUser(userData));
             router.push("/");
           }
