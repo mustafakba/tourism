@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { setTrips } from "@/provider/redux/trips/tripSlice";
+import { setTrips } from "../../provider/redux/trips/tripSlice";
 import { useDispatch } from "react-redux";
 
 // @ts-ignore
-import { formatDate } from "@/utils/FormatDate"; // utils klasöründeki formatDate fonksiyonunu import edin
+import { formatDate } from "../../utils/FormatDate"; // utils klasöründeki formatDate fonksiyonunu import edin
 
 import {
   faClock,
@@ -18,7 +18,7 @@ import {
   faXmark,
   faXmarkSquare,
 } from "@fortawesome/free-solid-svg-icons";
-import OurAdvantages from "@/components/OurAdvantages";
+import OurAdvantages from "../OurAdvantages";
 import { toast } from "react-toastify";
 import { filter } from "minimatch";
 import { router } from "next/client";

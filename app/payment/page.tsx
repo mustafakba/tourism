@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addTicket } from "@/provider/redux/users/usersSlice";
-import CreditCard from "@/components/CreditCard";
+
+import CreditCard from "../../components/CreditCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDiamond,
@@ -13,7 +13,7 @@ import {
   faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-import Spinner from "@/components/Spinner";
+import Spinner from "../../components/Spinner";
 
 const Page = () => {
   const tickets = useSelector((state) => state.user.tickets);

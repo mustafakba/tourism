@@ -5,9 +5,9 @@ import * as Yup from "yup";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import Link from "next/link";
 import Image from "next/image";
-import { auth, db } from "@/firebase/firebaseConfig";
+import { auth, db } from "../firebase/firebaseConfig";
 
-import { addDoc, collection } from "@firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
 import { toast } from "react-toastify";
 
 interface SignupFormData {

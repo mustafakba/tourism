@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
-import formatNumber from "@/utils/FormatNumber";
+import formatNumber from "../utils/FormatNumber";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
-import { addTicket } from "@/provider/redux/users/usersSlice";
+import { addTicket } from "../provider/redux/users/usersSlice";
 
 interface Seats {
   seat_id: string;
