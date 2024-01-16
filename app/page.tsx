@@ -2,10 +2,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import Image from "next/image";
-import SearchBar from "@/components/shared/SearchBar";
-import HeroSection from "@/components/HeroSection";
-import OurInfos from "@/components/OurInfos";
+import HeroSection from "../components/HeroSection";
+import OurInfos from "../components/OurInfos";
 import { faPlaneSlash } from "@fortawesome/free-solid-svg-icons";
 
 interface User {

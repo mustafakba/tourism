@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import SearchBar from "@/components/shared/SearchBar";
+import SearchBar from "../components/shared/SearchBar";
 
 const HeroSection = () => {
   return (

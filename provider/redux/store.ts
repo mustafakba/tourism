@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import userReducer from "@/provider/redux/users/usersSlice";
-import tripsReducer from "@/provider/redux/trips/tripSlice";
-import cartReducer from "@/provider/redux/cart/cartSlice";
+import userReducer from "../redux/users/usersSlice";
+import tripsReducer from "../redux/trips/tripSlice";
+import cartReducer from "../redux/cart/cartSlice";
 
 export type RootState = ReturnType<typeof store.getState>;
 

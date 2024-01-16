@@ -1,5 +1,5 @@
 import React from "react";
-import AdvantageCard from "@/components/AdvantageCart";
+import AdvantageCard from "../components/AdvantageCart";
 import {
   faClock,
   faCoins,

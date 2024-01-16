@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import SignupForm from "@/components/SignUp";
+import SignupForm from "../../../components/SignUp";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 

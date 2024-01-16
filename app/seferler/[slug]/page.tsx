@@ -2,9 +2,11 @@
 import React, { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
-import { addToCart, removeFromCart } from "@/provider/redux/cart/cartSlice";
-import SeatGrid from "@/components/SeatGrid";
-import { userSlice } from "@/provider/redux/users/usersSlice";
+import {
+  addToCart,
+  removeFromCart,
+} from "../../../provider/redux/cart/cartSlice";
+import SeatGrid from "../../../components/SeatGrid";
 
 interface Trip {
   trip_number: string;

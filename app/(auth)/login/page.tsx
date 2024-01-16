@@ -11,14 +11,14 @@ import {
   where,
   collection,
   Timestamp,
-} from "@firebase/firestore";
-import { auth, db } from "@/firebase/firebaseConfig";
+} from "firebase/firestore";
+import { auth, db } from "../../../firebase/firebaseConfig";
 import Link from "next/link";
 import Image from "next/image";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
-import { setUser } from "@/provider/redux/users/usersSlice";
-import { calculateAge } from "@/utils/CalculateAge";
+import { setUser } from "../../../provider/redux/users/usersSlice";
+import { calculateAge } from "../../../utils/CalculateAge";
 import { useRouter } from "next/navigation";
 
 interface LoginFormValues {

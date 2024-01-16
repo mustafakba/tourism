@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "@/provider/redux/store";
-import { setTrips } from "@/provider/redux/trips/tripSlice";
-import SearchBar from "@/components/shared/SearchBar";
+import { RootState } from "../../provider/redux/store";
+import { setTrips } from "../../provider/redux/trips/tripSlice";
+import SearchBar from "../../components/shared/SearchBar";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-regular-svg-icons";

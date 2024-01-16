@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState, MouseEvent } from "react";
-import LoadingSpinnerLight from "@/components/LoadingSpinner";
+import LoadingSpinnerLight from "../LoadingSpinner";
 
 // Prop türlerini tanımlayın
 interface ButtonProps {

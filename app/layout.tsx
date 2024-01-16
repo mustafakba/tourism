@@ -7,8 +7,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import MainProvider from "@/components/MainProvider";
-import ReduxProvider from "@/provider/redux/ReduxProvider";
+import MainProvider from "../components/MainProvider";
+import ReduxProvider from "../provider/redux/ReduxProvider";
 config.autoAddCss = false;
 
 export const metadata: Metadata = {
